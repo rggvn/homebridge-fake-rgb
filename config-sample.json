@@ -10,7 +10,8 @@
 
     "accessories": [{
         "accessory": "Fake-RGB",
-        "name": "RGB Bulb"
+        "name": "RGB Bulb",
+        "ip": "YOURIP"
     }],
 
     "platforms": []

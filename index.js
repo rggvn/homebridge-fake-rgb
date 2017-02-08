@@ -11,6 +11,7 @@ function RgbAccessory( log, config ) {
   this.log = log;
   this.config = config;
   this.name = config.name;
+  this.ip = config.ip;
   this.power = 0;
   this.brightness = 100;
   this.saturation = 0;
@@ -18,6 +19,13 @@ function RgbAccessory( log, config ) {
 
   this.log( "Initialized '" + this.name + "'" );
 }
+
+RgbAccessory.prototype.sendCommand = function(command, callback) {
+  var exec = require('child_process').exec;
+  var cmd =  __dirname + '/flux_led.py ' + this.ip + ' ' + command;
+  exec(cmd, callback);
+  // console.log(this.ip)
+};
 
 RgbAccessory.prototype.setColor = function() {
   var color = colorsys.hsv_to_rgb( {
