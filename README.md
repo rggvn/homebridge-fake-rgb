@@ -2,6 +2,10 @@
 
 An homebridge plugin that create an Fake RGB Bulb HomeKit accessory
 
+#FORK
+
+this is a fork to control my magichome ledstrip, made for personal use.
+
 # Installation
 
 Follow the instruction in [homebridge](https://www.npmjs.com/package/homebridge) for the homebridge server installation. The plugin is published through [NPM](https://www.npmjs.com/package/homebridge-fake-rgb) and should be installed "globally" by typing:
@@ -17,7 +21,8 @@ Remember to configure the plugin in config.json in your home directory inside th
 ```json
 "accessories": [{
     "accessory": "Fake-RGB",
-    "name": "RGB Bulb"
+    "name": "RGB Bulb",
+    "ip": "YOURIPADDRESS"
 }]
 ```
 
