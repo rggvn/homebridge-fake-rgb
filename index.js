@@ -40,8 +40,10 @@ RgbAccessory.prototype.setColor = function() {
     color.b = 0;
   }
 
-  this.log( "set color to", color.r, color.g, color.b );
+  // this.log( "set color to", color.r, color.g, color.b );
+    this.sendCommand('-c' + color.r + ',' + color.b + ',' + color.g)
 };
+
 
 RgbAccessory.prototype.getServices = function() {
   var lightbulbService = new Service.Lightbulb( this.name );
