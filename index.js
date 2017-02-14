@@ -57,8 +57,11 @@ RgbAccessory.prototype.getServices = function() {
     .on( 'set', function( value, callback ) {
       bulb.power = value;
       bulb.log( "power to " + value );
-      bulb.setColor();
-      callback();
+      // bulb.setColor();
+      bulb.sendCommand(value ? '--on' : '--off', function(){
+        callback();
+      })
+      // callback();
     } );
 
   lightbulbService
