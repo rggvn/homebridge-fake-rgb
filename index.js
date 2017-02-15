@@ -56,11 +56,12 @@ RgbAccessory.prototype.getServices = function() {
     } )
     .on( 'set', function( value, callback ) {
       bulb.power = value;
+      console.log(value);
       bulb.log( "power to " + value );
       // bulb.setColor();
       bulb.sendCommand(value ? '--on' : '--off', function(){
         callback();
-      })
+      });
       // callback();
     } );
 
