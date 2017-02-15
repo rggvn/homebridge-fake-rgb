@@ -23,9 +23,8 @@ function RgbAccessory( log, config ) {
 RgbAccessory.prototype.sendCommand = function(command, callback) {
   var exec = require('child_process').exec;
   var cmd =  __dirname + '/flux_led.py ' + this.ip + ' ' + command;
-  console.log(cmd);
+
   exec(cmd, callback);
-  // console.log(this.ip)
 };
 
 RgbAccessory.prototype.setColor = function() {
@@ -40,8 +39,6 @@ RgbAccessory.prototype.setColor = function() {
     color.g = 0;
     color.b = 0;
   }
-
-  // this.log( "set color to", color.r, color.g, color.b );
     this.sendCommand('-c' + color.r + ',' + color.b + ',' + color.g)
 };
 
@@ -58,12 +55,10 @@ RgbAccessory.prototype.getServices = function() {
     .on( 'set', function( value, callback ) {
       bulb.power = value;
       bulb.log( "power to " + value );
-      // bulb.setColor();
       console.log(value ? '--on' : '--off');
       bulb.sendCommand(value ? '--on' : '--off', function(){
         callback();
       });
-      // callback();
     } );
 
   lightbulbService
