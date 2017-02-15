@@ -23,6 +23,7 @@ function RgbAccessory( log, config ) {
 RgbAccessory.prototype.sendCommand = function(command, callback) {
   var exec = require('child_process').exec;
   var cmd =  __dirname + '/flux_led.py ' + this.ip + ' ' + command;
+  console.log(cmd);
   exec(cmd, callback);
   // console.log(this.ip)
 };
