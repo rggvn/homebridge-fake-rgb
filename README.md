@@ -2,7 +2,7 @@
 
 An homebridge plugin that create an Fake RGB Bulb HomeKit accessory
 
-#FORK
+# FORK
 
 this is a fork to control my magichome ledstrip, made for personal use.
 
